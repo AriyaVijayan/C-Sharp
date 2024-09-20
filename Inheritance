@@ -1,0 +1,44 @@
+
+
+class Student : Person{
+    private int[] testScores;  
+  
+    /*	
+    *   Class Constructor
+    *   
+    *   Parameters: 
+    *   firstName - A string denoting the Person's first name.
+    *   lastName - A string denoting the Person's last name.
+    *   id - An integer denoting the Person's ID number.
+    *   scores - An array of integers denoting the Person's test scores.
+    */
+    // Write your constructor here
+    
+    /*	
+    *   Method Name: Calculate
+    *   Return: A character denoting the grade.
+    */
+    // Write your method here
+    public Student(string firstName, string lastName, int id, int[] scores)
+    {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.id = id;
+        this.testScores = scores;
+    }
+    public string Calculate() {
+        var average = testScores.Average();
+        var res = IsWithin(average, 90, 100) ? "O" : 
+                    IsWithin(average, 80, 89) ? "E" :
+                    IsWithin(average, 70, 79) ? "A" :
+                    IsWithin(average, 50, 69) ? "P" :
+                    IsWithin(average, 40, 54) ? "D" :
+                    "T";
+        return res;
+}
+
+    private bool IsWithin(double value, int minimum, int maximum) {
+        return value >= minimum && value <= maximum;
+    }
+}
+
