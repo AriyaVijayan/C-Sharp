@@ -1,0 +1,21 @@
+
+
+class Solution {
+    //Write your code here
+public Stack < char > charS = new Stack < char > ();
+    public Queue < char > charQ = new Queue < char > ();
+
+    void pushCharacter(char c) {
+        charS.Push(c);
+    }
+
+    char popCharacter() {
+        return charS.Pop();
+    }
+    void enqueueCharacter(char c) {
+        charQ.Enqueue(c);
+    }
+
+    char dequeueCharacter() {
+        return charQ.Dequeue();
+    }
